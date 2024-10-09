@@ -4,15 +4,12 @@ import json
 from dotenv import load_dotenv
 load_dotenv()
 
-with open('config.json') as f:
-    config = json.load(f)
-
 with open('prompts/system_prompt.txt', 'r') as f:
     system_prompt = f.read()
 
 class LLM:
     def __init__(self):
-        self.model_name = config['AZURE_OPENAI_MODEL_NAME']
+        self.model_name = os.getenv("AZURE_OPENAI_ENDPOINT")
     
     def generate_completion(self, user_prompt):
         client = AzureOpenAI(
