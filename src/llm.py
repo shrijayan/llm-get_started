@@ -7,7 +7,7 @@ load_dotenv()
 with open('config.json') as f:
     config = json.load(f)
 
-with open('system_prompt.txt', 'r') as f:
+with open('prompts/system_prompt.txt', 'r') as f:
     system_prompt = f.read()
 
 class LLM:
