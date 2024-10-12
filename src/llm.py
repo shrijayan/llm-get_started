@@ -9,7 +9,7 @@ with open('prompts/system_prompt.txt', 'r') as f:
 
 class LLM:
     def __init__(self):
-        self.model_name = os.getenv("AZURE_OPENAI_ENDPOINT")
+        self.model_name = os.getenv("AZURE_OPENAI_MODEL_NAME")
     
     def generate_completion(self, user_prompt):
         client = AzureOpenAI(
